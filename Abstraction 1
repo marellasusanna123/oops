@@ -1,0 +1,55 @@
+// Abstract class
+abstract class Vehicle {
+    // Abstract methods
+    public abstract void startEngine();
+    public abstract void stopEngine();
+
+    // Concrete method (optional)
+    public void fuelType() {
+        System.out.println("Fuel type: Petrol or Diesel");
+    }
+}
+
+// Car class extending Vehicle
+class Car extends Vehicle {
+    @Override
+    public void startEngine() {
+        System.out.println("Car engine started with key ignition.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println("Car engine stopped.");
+    }
+}
+
+// Bike class extending Vehicle
+class Bike extends Vehicle {
+    @Override
+    public void startEngine() {
+        System.out.println("Bike engine started with self-start button.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println("Bike engine stopped.");
+    }
+}
+
+// Main class for testing
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car();
+        Vehicle myBike = new Bike();
+
+        System.out.println("Car:");
+        myCar.startEngine();
+        myCar.stopEngine();
+
+        System.out.println("\nBike:");
+        myBike.startEngine();
+        myBike.stopEngine();
+    }
+}
+
