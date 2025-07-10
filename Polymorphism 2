@@ -1,0 +1,34 @@
+public class Calculator {
+
+    
+    public int calculate(int num) {
+        System.out.println("Calculating square of int: " + num);
+        return num * num;
+    }
+
+    
+    public double calculate(double num) {
+        System.out.println("Calculating square of double: " + num);
+        return num * num;
+    }
+
+
+    public int calculate(String text) {
+        System.out.println("Calculating length of string: " + text);
+        return text.length();
+    }
+
+    
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        int squareInt = calc.calculate(5);
+        double squareDouble = calc.calculate(4.5);
+        int stringLength = calc.calculate("Susanna");
+
+        System.out.println("\nResults:");
+        System.out.println("Square of int: " + squareInt);
+        System.out.println("Square of double: " + squareDouble);
+        System.out.println("Length of string: " + stringLength);
+    }
+}
