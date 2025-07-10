@@ -1,0 +1,34 @@
+=
+interface Flyable {
+    void fly();  // abstract method
+}
+
+
+class Bird implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println("The bird flaps its wings and flies in the sky.");
+    }
+}
+
+
+class Airplane implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println("The airplane takes off and soars through the clouds.");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Flyable sparrow = new Bird();
+        Flyable boeing = new Airplane();
+
+        System.out.println("Bird:");
+        sparrow.fly();
+
+        System.out.println("\nAirplane:");
+        boeing.fly();
+    }
+}
