@@ -1,1 +1,51 @@
+public class Student  {
+
+    private int rollNo;
+    private String name;
+    private double marks;
+    public Student(int rollNo, String name, double marks) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.marks = marks;
+    }
+    public int getRollNo() {
+        return rollNo;
+    }
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getMarks() {
+        return marks;
+    }
+    public void setMarks(double marks) {
+        if (marks >= 0 && marks <= 100) {
+            this.marks = marks;
+        } else {
+            System.out.println("Invalid marks. Must be between 0 and 100.");
+        }
+    }
+    public static void main(String[] args) {
+        Student student = new Student(101, "Susanna", 88.5);
+
+        // Display initial details
+        System.out.println("Roll No: " + student.getRollNo());
+        System.out.println("Name: " + student.getName());
+        System.out.println("Marks: " + student.getMarks());
+        student.setMarks(95.0);  // valid update
+        student.setName("Susanna Marella");
+        System.out.println("\nAfter updates:");
+        System.out.println("Name: " + student.getName());
+        System.out.println("Marks: " + student.getMarks());
+
+
+        student.setMarks(110);  // should show error
+    }
+}
+
 
