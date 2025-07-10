@@ -1,0 +1,42 @@
+abstract class Appliance {
+    protected String brand;
+    public Appliance(String brand) {
+        this.brand = brand;
+    }
+    public abstract void turnOn();
+    public void showBrand() {
+        System.out.println("Brand: " + brand);
+    }
+}
+class Fan extends Appliance {
+    public Fan(String brand) {
+        super(brand);
+    }
+    @Override
+    public void turnOn() {
+        System.out.println("Fan is now spinning.");
+    }
+}
+class TV extends Appliance {
+    public TV(String brand) {
+        super(brand);
+    }
+    @Override
+    public void turnOn() {
+        System.out.println("TV is now displaying the home screen.");
+    }
+}
+public class Main3  {
+    public static void main(String[] args) {
+        Appliance myFan = new Fan("Havells");
+        Appliance myTV = new TV("Samsung");
+
+        System.out.println("Fan:");
+        myFan.showBrand();
+        myFan.turnOn();
+
+        System.out.println("\nTV:");
+        myTV.showBrand();
+        myTV.turnOn();
+    }
+}
